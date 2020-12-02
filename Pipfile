@@ -1,0 +1,29 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+pylint = "*"
+pylint-django = "*"
+pytest = "*"
+pytest-django = "*"
+pytest-pythonpath = "*"
+django-extensions = "*"
+ipython = "*"
+
+[packages]
+coverage = "*"
+django = "*"
+djangorestframework = "*"
+django-configurations = "*"
+psycopg2-binary = "*"
+gunicorn = "*"
+djangorestframework-gis = "*"
+python-dotenv = "*"
+pylint = "*"
+importlib_metadata = "*"
+
+[requires]
+python_version = "3.7"

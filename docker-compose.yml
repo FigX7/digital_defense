@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+
+  dd-redis-dev:
+    restart: always
+    image: redis
+    ports: 
+      - 6379:6379
+
+  dd-postgres-dev:
+    restart: always
+    image: mdillon/postgis:11
+    env_file:
+      - .env
+    volumes:
+      - ./local/postgres/data:/var/lib/postgresql/data
+    ports:
+      - 5437:5432
+
+  dd-django-dev:
+    restart: always
+    image: dd-django-dev
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+    ports:
+      - 8007:8000
+      - 3007:3000
+      - 5678:5678
+    entrypoint: ./start.sh
