@@ -8,3 +8,4 @@ A Django REST application dockerized with Angular front end.
 
 ## Set-up
 
+1. clone repo = ``` https://github.com/FigX7/digital_defense.git ``` 

@@ -1,10 +1,8 @@
 #!/bin/sh
 
 # wait for postgres container to start
-while ! nc -z dd-postgres-dev 5432; do
-    echo "postgres is unavailable. waiting ..." && sleep 20
-done
-echo "postgres is up" && sleep 10
+
+echo "waiting for database to start" && sleep 30
 
 # install dependencies
 cd /code

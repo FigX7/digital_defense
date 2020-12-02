@@ -14,10 +14,12 @@ django-extensions = "*"
 ipython = "*"
 
 [packages]
+atomicwrites = "*"
 coverage = "*"
 django = "*"
 djangorestframework = "*"
 django-configurations = "*"
+django-cors-headers = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
 djangorestframework-gis = "*"
