@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from rest_framework import routers
 
+from digital_defense import filters
 from digital_defense import models
 from digital_defense import serializers
 
@@ -26,6 +27,7 @@ class PageViewSet(viewsets.ModelViewSet):
     queryset = models.Page.objects.all()
     serializer_class = serializers.PageSerializer
     permission_classes = [permissions.AllowAny]
+    filter_backends = [filters.PagesFilterByWebsite]
 
 
 page_site_router = routers.SimpleRouter()
@@ -39,6 +41,7 @@ class VulnerabilityViewSet(viewsets.ModelViewSet):
     queryset = models.Vulnerability.objects.all()
     serializer_class = serializers.VulnerabilitySerializer
     permission_classes = [permissions.AllowAny]
+    filter_backends = [filters.VulnerabilityFilterByWebsite]
 
 
 vulnerability_site_router = routers.SimpleRouter()

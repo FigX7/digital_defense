@@ -2,13 +2,34 @@
   <div class="col-md-8">
   </div>
   <div class="col-md-6">
-    <h4>Web Sites</h4>
+    <h4>Web Site</h4>
     <select class="custom-select" (change)="changeWebsite($event)">
       <option value="" disabled>Choose Website</option>
       <option  [value]="website.id" *ngFor="let website of websites">{{website.name}}</option>
    </select>
 
+   <div *ngIf="currentWebsite">
+    <h5>Page</h5>
+    <select class="custom-select" (change)="changePage($event)">
+      <option value="" disabled>Choose Page</option>
+      <option  [value]="page.id" *ngFor="let page of pages">{{page.path}}</option>
+   </select>
+   </div>
 
+   <div *ngIf="vulnerabilities">
+      <h6>Vulnerabilities</h6>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let vulnerability of vulnerabilities; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveVulnerability(vulnerability, i)"
+        >
+          {{ vulnerability.data }}
+        </li>
+      </ul>
+
+   </div>
 
   </div>
 </div>

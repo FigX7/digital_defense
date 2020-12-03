@@ -9,9 +9,12 @@ import { SharedService } from 'src/app/shared.service';
 export class ListComponent implements OnInit {
 
 
-
+  pages: any;
   websites: any;
+  vulnerabilities: any;
+  currentPage: any;
   currentWebsite: any;
+  currentVulnerability: any;
   currentIndex = -1;
   name = '';
 
@@ -37,10 +40,30 @@ export class ListComponent implements OnInit {
     .subscribe(
       data => {
         this.currentWebsite = data;
-        console.log(data);
+        this.sharedervice.getPagesForSite(this.currentWebsite.id)
+        .subscribe(
+          pages => {
+            this.pages = pages;
       },
       error => {
         console.log(error);
       });
-    }
+    });
+  }
+
+  changePage(e:any): void {
+    this.sharedervice.getVulnerabilitiesPath(e.target.value)
+    .subscribe(
+      vulnerabilities => {
+        this.vulnerabilities = vulnerabilities;
+    });
+  }
+
+
+
+  setActiveVulnerability(vulnerability:any, index:any): void {
+    this.currentVulnerability = vulnerability;
+    this.currentIndex = index;
+  }
+
 }
