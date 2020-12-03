@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+
+
+  websites: any;
+  currentWebsite: any;
+  currentIndex = -1;
+  name = '';
+
+  constructor(private sharedervice: SharedService) { }
 
   ngOnInit(): void {
+    this.listWebsites();
   }
 
+  listWebsites(): void {
+    this.sharedervice.getWebList()
+      .subscribe(
+        data => {
+          this.websites = data;
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  changeWebsite(e:any): void {
+    this.sharedervice.getWebDetail(e.target.value)
+    .subscribe(
+      data => {
+        this.currentWebsite = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      });
+    }
 }

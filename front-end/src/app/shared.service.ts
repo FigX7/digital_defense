@@ -14,4 +14,8 @@ export class SharedService {
   getWebList():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl + '/websites/');
   }
+
+  getWebDetail(id:any):Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl + '/websites/' + id + '/');
+  }
 }
