@@ -15,8 +15,7 @@ cd /code/application
 # run migrations
 pipenv run python manage.py migrate
 
-## run to feed the data once
-# pipenv run python manage.py loaddata application/fixtures/data/*
+pipenv run python manage.py loaddata application/fixtures/data/*
 
 # coverage implementation
 pipenv run coverage run -m pytest
