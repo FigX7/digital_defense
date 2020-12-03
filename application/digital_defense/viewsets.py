@@ -62,30 +62,35 @@ class PortsViewSet(viewsets.ViewSet):
     """
 
     def create(self, request):
-
-        # included_ports = [[80, 80], [22, 23], [8000, 9000]]
+        # case 1
+        # include_ports = [[80, 80], [22, 23], [8000, 9000]]
         # exclude_ports = [[8080, 8080], [1024, 1024]]
 
-        included_ports = [[80, 80], [22, 23], [8000, 9000]]
+        # case 2
+        include_ports = [[8000, 9000], [80, 80], [22, 23]]
         exclude_ports = [[1024, 1024], [8080, 8080]]
+
+        # case 3
+        # include_ports = [[1, 65535]]
+        # exclude_ports = [[1000, 2000], [500, 2500]]
 
         ports_result = []
 
-        for inc_port in included_ports:
-            for index, exc_port in enumerate(exclude_ports):
+        for inc_port in include_ports:
+            for exc_port in exclude_ports:
                 if inc_port[0] <= exc_port[0] <= inc_port[1]:
-                    inv_range = list(range(inc_port[0], inc_port[1]+1))
+                    inc_range = list(range(inc_port[0], inc_port[1]+1))
                     exc_range = list(range(exc_port[0], exc_port[1]+1))
 
-                    set_difference = set(inv_range) - set(exc_range)
+                    set_difference = set(inc_range) - set(exc_range)
                     list_difference = list(set_difference)
                     ports_result.append(list_difference)
-                    ports_result.pop(index)
                 else:
                     ports_result.append(list(inc_port))
 
         ports_result = set(item for pair in ports_result for item in pair)
         ports_result = sorted(ports_result)
+
 
         return response.Response(data=helpers.intervals_extract(ports_result))
 
