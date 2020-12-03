@@ -1,6 +1,11 @@
+import requests
+import itertools
 from rest_framework import viewsets
 from rest_framework import permissions
+from rest_framework import response
 from rest_framework import routers
+
+from core import helpers
 
 from digital_defense import filters
 from digital_defense import models
@@ -49,3 +54,44 @@ vulnerability_site_router.register(
     '',
     VulnerabilityViewSet,
     basename='vulnerabilities')
+
+
+class PortsViewSet(viewsets.ViewSet):
+    """
+    A simple ViewSet for testing port challenge
+    """
+
+    def create(self, request):
+
+        # included_ports = [[80, 80], [22, 23], [8000, 9000]]
+        # exclude_ports = [[8080, 8080], [1024, 1024]]
+
+        included_ports = [[80, 80], [22, 23], [8000, 9000]]
+        exclude_ports = [[1024, 1024], [8080, 8080]]
+
+        ports_result = []
+
+        for inc_port in included_ports:
+            for index, exc_port in enumerate(exclude_ports):
+                if inc_port[0] <= exc_port[0] <= inc_port[1]:
+                    inv_range = list(range(inc_port[0], inc_port[1]+1))
+                    exc_range = list(range(exc_port[0], exc_port[1]+1))
+
+                    set_difference = set(inv_range) - set(exc_range)
+                    list_difference = list(set_difference)
+                    ports_result.append(list_difference)
+                    ports_result.pop(index)
+                else:
+                    ports_result.append(list(inc_port))
+
+        ports_result = set(item for pair in ports_result for item in pair)
+        ports_result = sorted(ports_result)
+
+        return response.Response(data=helpers.intervals_extract(ports_result))
+
+
+ports_challenge_router = routers.SimpleRouter()
+ports_challenge_router.register(
+    '',
+    PortsViewSet,
+    basename='port-challenge')

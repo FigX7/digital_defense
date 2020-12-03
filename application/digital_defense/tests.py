@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 from django.test import TestCase
 
@@ -43,7 +42,7 @@ class PageViewSetTestCase(TestCase):
 
     def test_list(self):
         web_id = 1
-        response = self.client.get('/pages/', {'website_id': 1})
+        response = self.client.get(f'/pages/?website_id={web_id}')
         count = models.Page.objects.filter(website_id=web_id).count()
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         self.assertEqual(count, len(response.json()))

@@ -28,9 +28,9 @@ urlpatterns = [
 
     # Applications Urls
     path('health/', health_views.HealthCheckEndpoint.as_view(), name='health'),
-
-    url(r'^websites/', include(dd_viewsets.web_site_router.urls)),
+    url(r'^ports/', include(dd_viewsets.ports_challenge_router.urls)),
     url(r'^pages/', include(dd_viewsets.page_site_router.urls)),
+    url(r'^websites/', include(dd_viewsets.web_site_router.urls)),
     url(r'^vulnerabilities/', include(
         dd_viewsets.vulnerability_site_router.urls))
 ]
