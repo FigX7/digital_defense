@@ -14,6 +14,7 @@ A Django REST application dockerized with Angular front end.
 2. cd into repo root directory
 3. run ```docker-compose up``` wait appox 2 mins for boot  up
 4. cd into ./front-end
+5.  run ```npm install``` wait appox 2 mins for boot  up
 5. run ```ng serve --port 3000```
 6. open browser to ```http://localhoset:3000```
 8. Happy Testing
@@ -22,7 +23,7 @@ A Django REST application dockerized with Angular front end.
 - A endpoint templte is provided with the repo.
 - to run
 1. open Insmonia
-2. import endpoint. from repo
+2. import from ```'digital_defense\Insmonia_File\Insomnia_2020-12-04.yam```l
 
 
 ### NOTES
