@@ -1,10 +1,8 @@
 #!/bin/sh
 
 # wait for postgres container to start
-while ! nc -z dd-postgres-dev 5432; do
-    echo "postgres is unavailable. waiting ..." && sleep 20
-done
-echo "postgres is up" && sleep 10
+
+echo "waiting for database to start" && sleep 30
 
 # install dependencies
 cd /code
@@ -17,8 +15,7 @@ cd /code/application
 # run migrations
 pipenv run python manage.py migrate
 
-## run to feed the data once
-# pipenv run python manage.py loaddata application/fixtures/data/*
+pipenv run python manage.py loaddata fixtures/*.json
 
 # coverage implementation
 pipenv run coverage run -m pytest

@@ -14,16 +14,19 @@ django-extensions = "*"
 ipython = "*"
 
 [packages]
+atomicwrites = "*"
 coverage = "*"
 django = "*"
 djangorestframework = "*"
 django-configurations = "*"
-psycopg2-binary = "*"
-gunicorn = "*"
+django-cors-headers = "*"
 djangorestframework-gis = "*"
+gunicorn = "*"
+importlib_metadata = "*"
+psycopg2-binary = "*"
 python-dotenv = "*"
 pylint = "*"
-importlib_metadata = "*"
+requests  = "*"
 
 [requires]
 python_version = "3.7"

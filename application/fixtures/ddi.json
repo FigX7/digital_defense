@@ -1,0 +1,114 @@
+[
+    {
+        "model": "digital_defense.website",
+        "pk": 1,
+        "fields": {
+            "name": "foo",
+            "url": "http://foo.com"
+        }
+    },
+    {
+        "model": "digital_defense.website",
+        "pk": 2,
+        "fields": {
+            "name": "bar",
+            "url": "http://bar.com"
+        }
+    },
+    {
+        "model": "digital_defense.page",
+        "pk": 1,
+        "fields": {
+            "path": "/login.html",
+            "website_id": 1
+        }
+    },
+    {
+        "model": "digital_defense.page",
+        "pk": 2,
+        "fields": {
+            "path": "/logout.html",
+            "website_id": 1
+        }
+    },
+    {
+        "model": "digital_defense.page",
+        "pk": 3,
+        "fields": {
+            "path": "/admin.html",
+            "website_id": 1
+        }
+    },
+    {
+        "model": "digital_defense.page",
+        "pk": 4,
+        "fields": {
+            "path": "/login.html",
+            "website_id": 2
+        }
+    },
+    {
+        "model": "digital_defense.page",
+        "pk": 5,
+        "fields": {
+            "path": "/logout.html",
+            "website_id": 2
+        }
+    },
+    {
+        "model": "digital_defense.page",
+        "pk": 6,
+        "fields": {
+            "path": "/admin.html",
+            "website_id": 2
+        }
+    },
+    {
+        "model": "digital_defense.vulnerability",
+        "pk": 1,
+        "fields": {
+            "data": "SQL injection response blah",
+            "page_id": 1
+        }
+    },
+    {
+        "model": "digital_defense.vulnerability",
+        "pk": 2,
+        "fields": {
+            "data": "XXE response",
+            "page_id": 1
+        }
+    },
+    {
+        "model": "digital_defense.vulnerability",
+        "pk": 3,
+        "fields": {
+            "data": "Stored XSS response",
+            "page_id": 1
+        }
+    },
+    {
+        "model": "digital_defense.vulnerability",
+        "pk": 4,
+        "fields": {
+            "data": "Session hijack",
+            "page_id": 2
+        }
+    },
+    {
+        "model": "digital_defense.vulnerability",
+        "pk": 5,
+        "fields": {
+            "data": "XXE response",
+            "page_id": 4
+        }
+    },
+    {
+        "model": "digital_defense.vulnerability",
+        "pk": 6,
+        "fields": {
+            "data": "Default credentials response",
+            "page_id": 6
+        }
+    }
+]

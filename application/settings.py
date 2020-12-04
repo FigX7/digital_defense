@@ -41,7 +41,12 @@ class base(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
+        # local apps
+        'digital_defense',
+
+
         # Third Party
+        'corsheaders',
         'rest_framework',
     ]
 
@@ -53,6 +58,9 @@ class base(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        # CORS
+        'corsheaders.middleware.CorsMiddleware',
+        'django.middleware.common.CommonMiddleware',
     ]
 
     ROOT_URLCONF = 'urls'
@@ -127,6 +135,14 @@ class base(Configuration):
     # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
     STATIC_URL = '/static/'
+
+    CORS_ORIGIN_ALLOW_ALL = False
+    CORS_ORIGIN_WHITELIST = (
+        'http://localhost:4200',
+        'http://localhost:3000',
+        'http://localhost:8081'
+    )
+
 
 class dev(base):
     pass
