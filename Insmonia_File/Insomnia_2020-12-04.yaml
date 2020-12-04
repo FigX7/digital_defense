@@ -1,0 +1,365 @@
+_type: export
+__export_format: 4
+__export_date: 2020-12-04T15:22:33.411Z
+__export_source: insomnia.desktop.app:v2020.5.0
+resources:
+  - _id: req_a0732dba9c28458ab439ab30d052773a
+    parentId: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    modified: 1606897882947
+    created: 1606892083963
+    url: "{{ base_url }}/health"
+    name: health
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1606897668829
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    parentId: null
+    modified: 1606891978802
+    created: 1606891978802
+    name: Digital Defense
+    description: ""
+    scope: null
+    _type: workspace
+  - _id: req_2307802348a743d48de51b2a699a6273
+    parentId: fld_cbbd02bb8f7b492aa162712273cb73e3
+    modified: 1606897859511
+    created: 1606897774371
+    url: "{{ base_url }}/websites/"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "bar",
+        	"url": "http://bar.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3163591b129c42179ac1ad83da78a512
+    authentication: {}
+    metaSortKey: -1606897774371
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_cbbd02bb8f7b492aa162712273cb73e3
+    parentId: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    modified: 1606897668779
+    created: 1606897668779
+    name: Websites
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1606897668779
+    _type: request_group
+  - _id: req_f2480067178a4cde8901b56febd90fdf
+    parentId: fld_cbbd02bb8f7b492aa162712273cb73e3
+    modified: 1606897761220
+    created: 1606897744055
+    url: "{{ base_url }}/websites/1/"
+    name: retrieve
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1606897744055
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ea1c11fd65ea4212abe53236e87cb565
+    parentId: fld_cbbd02bb8f7b492aa162712273cb73e3
+    modified: 1606917989935
+    created: 1606897681212
+    url: "{{ base_url }}/websites/"
+    name: list
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1606897681212
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d5c9434637914385a6b280fbeab9f14e
+    parentId: fld_08108c8e951d43fb86147ef980710dbe
+    modified: 1606984266824
+    created: 1606984266824
+    url: "{{ base_url }}/websites/"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "bar",
+        	"url": "http://bar.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3163591b129c42179ac1ad83da78a512
+    authentication: {}
+    metaSortKey: -1606897774371
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_08108c8e951d43fb86147ef980710dbe
+    parentId: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    modified: 1606984699007
+    created: 1606984266808
+    name: Pages
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1605517885326
+    _type: request_group
+  - _id: req_f508ca576bf84a5782667c4a59f2be48
+    parentId: fld_08108c8e951d43fb86147ef980710dbe
+    modified: 1606984715667
+    created: 1606984266822
+    url: "{{ base_url }}/pages/1/"
+    name: retrieve
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1606897744055
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c2f91ab510b44318ae7dbd52b781438d
+    parentId: fld_08108c8e951d43fb86147ef980710dbe
+    modified: 1606984941929
+    created: 1606984266815
+    url: "{{ base_url }}/pages/"
+    name: list
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1606897681212
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cf3fe895b270491589f0d9a877412487
+    parentId: fld_4ea69f17f0bc475fa66736dc5eef7a2a
+    modified: 1606899011081
+    created: 1606898504290
+    url: "{{ base_url }}/vulnerabilities/"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"page_id": 6,
+        	"data": "Default credentials response"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3163591b129c42179ac1ad83da78a512
+    authentication: {}
+    metaSortKey: -1606897774371
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_4ea69f17f0bc475fa66736dc5eef7a2a
+    parentId: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    modified: 1606898504282
+    created: 1606898504282
+    name: Vulnerabilities
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1602758318420
+    _type: request_group
+  - _id: req_bd00395d90e94c34b7f66b391a0d4a3a
+    parentId: fld_4ea69f17f0bc475fa66736dc5eef7a2a
+    modified: 1606975683068
+    created: 1606898504285
+    url: "{{ base_url }}/vulnerabilities/"
+    name: list
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - name: page_id
+        value: "1"
+        description: ""
+        id: pair_f10b27a08ac947838181287d05a7186f
+        disabled: false
+    headers: []
+    authentication: {}
+    metaSortKey: -1606897681212
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b1e803f3339245769f97723fffcd2a04
+    parentId: fld_4ea69f17f0bc475fa66736dc5eef7a2a
+    modified: 1606898547270
+    created: 1606898504288
+    url: "{{ base_url }}/vulnerabilities/1/"
+    name: retrieve
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1606897681162
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c5d89085041c47848b0d916eed046cd6
+    parentId: fld_16654a2b2eac423fae0bf51c6726d7cb
+    modified: 1606984296160
+    created: 1606897906075
+    url: "{{ base_url }}/ports/"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"website_id": 2,
+        	"path": "/admin.html"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3163591b129c42179ac1ad83da78a512
+    authentication: {}
+    metaSortKey: -1606897774371
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_16654a2b2eac423fae0bf51c6726d7cb
+    parentId: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    modified: 1606998951238
+    created: 1606897906061
+    name: Ports
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1602758318370
+    _type: request_group
+  - _id: env_41d4b2207095b5b2c92cf2bfb9d60fa0407c44fe
+    parentId: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    modified: 1606892063885
+    created: 1606891978880
+    name: Base Environment
+    data:
+      base_url: http://localhost:8007
+    dataPropertyOrder:
+      "&":
+        - base_url
+    color: null
+    isPrivate: false
+    metaSortKey: 1606891978880
+    _type: environment
+  - _id: jar_41d4b2207095b5b2c92cf2bfb9d60fa0407c44fe
+    parentId: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    modified: 1606891978884
+    created: 1606891978884
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_a14a81279bbf4436ae2fa05946574d0a
+    parentId: wrk_c66121a4e9d84ffe8e6830a0366df1ad
+    modified: 1606891978811
+    created: 1606891978811
+    fileName: Digital Defense
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_8c350721242f41f8a9573d1ece804c7b
+    parentId: env_41d4b2207095b5b2c92cf2bfb9d60fa0407c44fe
+    modified: 1606892044105
+    created: 1606892028056
+    name: local
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 0
+    _type: environment
